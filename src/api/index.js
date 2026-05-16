@@ -53,11 +53,25 @@ export const getHitokoto = async () => {
  * 天气
  */
 
-// 获取高德地理位置信息
+// // 获取高德地理位置信息
+// export const getAdcode = async (key) => {
+//   const res = await fetch(`https://restapi.amap.com/v3/ip?key=${key}`);
+//   return await res.json();
+// };
+
+// 获取高德地理位置信息：固定为乌鲁木齐
 export const getAdcode = async (key) => {
-  const res = await fetch(`https://restapi.amap.com/v3/ip?key=${key}`);
-  return await res.json();
+  return {
+    status: "1",
+    info: "OK",
+    infocode: "10000",
+    province: "新疆维吾尔自治区",
+    city: "乌鲁木齐市",
+    adcode: "650100",
+    rectangle: "",
+  };
 };
+
 
 // 获取高德地理天气信息
 export const getWeather = async (key, city) => {
